@@ -1,0 +1,27 @@
+[
+    {
+        "id": "lunch_classic",
+        "name": "Déjeuner Classique",
+        "description": "Menu traditionnel français pour le déjeuner"
+    },
+    {
+        "id": "dinner_gourmet",
+        "name": "Dîner Gourmet",
+        "description": "Menu raffiné pour le soir"
+    },
+    {
+        "id": "vegetarian_menu",
+        "name": "Menu Végétarien",
+        "description": "Cuisine française végétarienne"
+    },
+    {
+        "id": "kids_menu",
+        "name": "Menu Enfant",
+        "description": "Menu adapté aux enfants"
+    },
+    {
+        "id": "festive_menu",
+        "name": "Menu Festif",
+        "description": "Menu pour occasions spéciales"
+    }
+]

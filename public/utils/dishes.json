@@ -1,0 +1,368 @@
+{
+    "starters": [
+        {
+            "menu-id": "lunch_classic",
+            "name": "Soupe à l'oignon",
+            "description": "Soupe aux oignons gratinée au fromage",
+            "price": 7.5
+        },
+        {
+            "menu-id": "lunch_classic",
+            "name": "Salade Niçoise",
+            "description": "Thon, œufs, olives et légumes frais",
+            "price": 9.0
+        },
+        {
+            "menu-id": "lunch_classic",
+            "name": "Œufs mimosa",
+            "description": "Œufs farcis à la mayonnaise maison",
+            "price": 6.5
+        },
+        {
+            "menu-id": "lunch_classic",
+            "name": "Terrine de campagne",
+            "description": "Terrine maison et cornichons",
+            "price": 8.0
+        },
+        {
+            "menu-id": "dinner_gourmet",
+            "name": "Foie gras maison",
+            "description": "Servi avec chutney de figues",
+            "price": 15.0
+        },
+        {
+            "menu-id": "dinner_gourmet",
+            "name": "Tartare de saumon",
+            "description": "Saumon frais et citron vert",
+            "price": 12.0
+        },
+        {
+            "menu-id": "dinner_gourmet",
+            "name": "Carpaccio de bœuf",
+            "description": "Bœuf cru et parmesan",
+            "price": 13.0
+        },
+        {
+            "menu-id": "dinner_gourmet",
+            "name": "Velouté de potiron",
+            "description": "Crème et muscade",
+            "price": 8.0
+        },
+        {
+            "menu-id": "vegetarian_menu",
+            "name": "Salade de chèvre chaud",
+            "description": "Fromage de chèvre et miel",
+            "price": 9.5
+        },
+        {
+            "menu-id": "vegetarian_menu",
+            "name": "Velouté de légumes",
+            "description": "Légumes de saison",
+            "price": 7.0
+        },
+        {
+            "menu-id": "vegetarian_menu",
+            "name": "Carpaccio de betteraves",
+            "description": "Fromage frais",
+            "price": 8.0
+        },
+        {
+            "menu-id": "vegetarian_menu",
+            "name": "Caviar d’aubergine",
+            "description": "Aubergines grillées",
+            "price": 8.5
+        },
+        {
+            "menu-id": "kids_menu",
+            "name": "Tomates cerises",
+            "description": "Tomates fraîches",
+            "price": 4.0
+        },
+        {
+            "menu-id": "kids_menu",
+            "name": "Soupe de légumes",
+            "description": "Douce et légère",
+            "price": 4.5
+        },
+        {
+            "menu-id": "kids_menu",
+            "name": "Mini salade",
+            "description": "Salade verte",
+            "price": 4.0
+        },
+        {
+            "menu-id": "kids_menu",
+            "name": "Œuf dur",
+            "description": "Œuf nature",
+            "price": 3.5
+        },
+        {
+            "menu-id": "festive_menu",
+            "name": "Saumon fumé",
+            "description": "Blinis et crème fraîche",
+            "price": 13.0
+        },
+        {
+            "menu-id": "festive_menu",
+            "name": "Foie gras",
+            "description": "Pain brioché",
+            "price": 18.0
+        },
+        {
+            "menu-id": "festive_menu",
+            "name": "Saint-Jacques",
+            "description": "Poêlées",
+            "price": 16.0
+        },
+        {
+            "menu-id": "festive_menu",
+            "name": "Velouté de langoustines",
+            "description": "Crémeux",
+            "price": 14.0
+        }
+    ],
+    "mains": [
+        {
+            "menu-id": "lunch_classic",
+            "name": "Bœuf Bourguignon",
+            "description": "Bœuf mijoté au vin rouge",
+            "price": 18.5
+        },
+        {
+            "menu-id": "lunch_classic",
+            "name": "Poulet Basquaise",
+            "description": "Poulet mijoté aux poivrons",
+            "price": 16.0
+        },
+        {
+            "menu-id": "lunch_classic",
+            "name": "Steak frites",
+            "description": "Steak grillé et frites maison",
+            "price": 17.5
+        },
+        {
+            "menu-id": "lunch_classic",
+            "name": "Filet de saumon",
+            "description": "Saumon rôti sauce citron",
+            "price": 18.0
+        },
+        {
+            "menu-id": "dinner_gourmet",
+            "name": "Magret de canard",
+            "description": "Sauce fruits rouges",
+            "price": 22.0
+        },
+        {
+            "menu-id": "dinner_gourmet",
+            "name": "Cabillaud rôti",
+            "description": "Sauce beurre blanc",
+            "price": 20.0
+        },
+        {
+            "menu-id": "dinner_gourmet",
+            "name": "Risotto aux champignons",
+            "description": "Risotto crémeux",
+            "price": 18.0
+        },
+        {
+            "menu-id": "dinner_gourmet",
+            "name": "Filet de veau",
+            "description": "Sauce forestière",
+            "price": 23.0
+        },
+        {
+            "menu-id": "vegetarian_menu",
+            "name": "Ratatouille",
+            "description": "Légumes provençaux",
+            "price": 15.0
+        },
+        {
+            "menu-id": "vegetarian_menu",
+            "name": "Lasagnes végétariennes",
+            "description": "Légumes et fromage",
+            "price": 16.0
+        },
+        {
+            "menu-id": "vegetarian_menu",
+            "name": "Quiche aux légumes",
+            "description": "Quiche maison",
+            "price": 14.0
+        },
+        {
+            "menu-id": "vegetarian_menu",
+            "name": "Risotto aux légumes",
+            "description": "Crémeux et parfumé",
+            "price": 15.5
+        },
+        {
+            "menu-id": "kids_menu",
+            "name": "Nuggets de poulet",
+            "description": "Poulet pané",
+            "price": 8.0
+        },
+        {
+            "menu-id": "kids_menu",
+            "name": "Steak haché",
+            "description": "Viande grillée",
+            "price": 8.5
+        },
+        {
+            "menu-id": "kids_menu",
+            "name": "Pâtes nature",
+            "description": "Pâtes au beurre",
+            "price": 7.0
+        },
+        {
+            "menu-id": "kids_menu",
+            "name": "Poisson pané",
+            "description": "Poisson croustillant",
+            "price": 8.0
+        },
+        {
+            "menu-id": "festive_menu",
+            "name": "Filet de bœuf",
+            "description": "Sauce truffe",
+            "price": 28.0
+        },
+        {
+            "menu-id": "festive_menu",
+            "name": "Carré d’agneau",
+            "description": "Rôti au thym",
+            "price": 26.0
+        },
+        {
+            "menu-id": "festive_menu",
+            "name": "Homard grillé",
+            "description": "Beurre aux herbes",
+            "price": 30.0
+        },
+        {
+            "menu-id": "festive_menu",
+            "name": "Risotto aux truffes",
+            "description": "Truffes noires",
+            "price": 24.0
+        }
+    ],
+    "desserts": [
+        {
+            "menu-id": "lunch_classic",
+            "name": "Crème brûlée",
+            "description": "Crème vanille caramélisée",
+            "price": 6.5
+        },
+        {
+            "menu-id": "lunch_classic",
+            "name": "Tarte Tatin",
+            "description": "Pommes caramélisées",
+            "price": 7.0
+        },
+        {
+            "menu-id": "lunch_classic",
+            "name": "Mousse au chocolat",
+            "description": "Chocolat noir intense",
+            "price": 6.5
+        },
+        {
+            "menu-id": "lunch_classic",
+            "name": "Île flottante",
+            "description": "Blancs en neige et crème anglaise",
+            "price": 6.0
+        },
+        {
+            "menu-id": "dinner_gourmet",
+            "name": "Fondant au chocolat",
+            "description": "Cœur coulant",
+            "price": 7.0
+        },
+        {
+            "menu-id": "dinner_gourmet",
+            "name": "Profiteroles",
+            "description": "Sauce chocolat chaud",
+            "price": 7.5
+        },
+        {
+            "menu-id": "dinner_gourmet",
+            "name": "Tarte citron meringuée",
+            "description": "Citron frais",
+            "price": 7.0
+        },
+        {
+            "menu-id": "dinner_gourmet",
+            "name": "Fromages affinés",
+            "description": "Sélection française",
+            "price": 8.0
+        },
+        {
+            "menu-id": "vegetarian_menu",
+            "name": "Salade de fruits",
+            "description": "Fruits frais",
+            "price": 6.0
+        },
+        {
+            "menu-id": "vegetarian_menu",
+            "name": "Panna cotta",
+            "description": "Coulis fruits rouges",
+            "price": 6.5
+        },
+        {
+            "menu-id": "vegetarian_menu",
+            "name": "Tarte aux pommes",
+            "description": "Pommes caramélisées",
+            "price": 6.5
+        },
+        {
+            "menu-id": "vegetarian_menu",
+            "name": "Sorbet citron",
+            "description": "Rafraîchissant",
+            "price": 5.5
+        },
+        {
+            "menu-id": "kids_menu",
+            "name": "Glace vanille",
+            "description": "1 boule",
+            "price": 3.0
+        },
+        {
+            "menu-id": "kids_menu",
+            "name": "Brownie",
+            "description": "Petit gâteau chocolat",
+            "price": 3.5
+        },
+        {
+            "menu-id": "kids_menu",
+            "name": "Compote de pommes",
+            "description": "Maison",
+            "price": 3.0
+        },
+        {
+            "menu-id": "kids_menu",
+            "name": "Crêpe sucre",
+            "description": "Crêpe fine",
+            "price": 3.0
+        },
+        {
+            "menu-id": "festive_menu",
+            "name": "Bûche de Noël",
+            "description": "Traditionnelle",
+            "price": 8.0
+        },
+        {
+            "menu-id": "festive_menu",
+            "name": "Mille-feuille",
+            "description": "Crème pâtissière",
+            "price": 7.5
+        },
+        {
+            "menu-id": "festive_menu",
+            "name": "Soufflé chocolat",
+            "description": "Léger et chaud",
+            "price": 7.5
+        },
+        {
+            "menu-id": "festive_menu",
+            "name": "Parfait glacé",
+            "description": "Vanille et fruits",
+            "price": 7.0
+        }
+    ]
+}
