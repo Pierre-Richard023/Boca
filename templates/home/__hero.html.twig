@@ -1,0 +1,22 @@
+<section class="relative h-[92vh] min-h-[640px] w-full overflow-hidden">
+	<img src="{{ asset('images/hero.jpg') }}" alt="Salle de restaurant aux chandelles" class="absolute inset-0 h-full w-full object-cover" width="1920" height="1280"/>
+	<div class="absolute inset-0" style="background: var(--gradient-hero);"></div>
+	<div class="relative z-10 container-prose h-full flex flex-col items-center justify-center text-center">
+		<span class="divider-gold mb-8">Depuis 1987</span>
+		<h1 class="font-serif text-5xl md:text-7xl lg:text-8xl leading-[1.05] max-w-4xl">
+			L'art de la table,<br/>
+			<em class="text-gold font-normal">à la française.</em>
+		</h1>
+		<p class="mt-8 max-w-xl text-base md:text-lg text-muted-foreground leading-relaxed">
+			Une cuisine d'auteur, des produits choisis avec soin, et une ambiance feutrée pour des soirées d'exception.
+		</p>
+		<div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+			<a href="{{ path('reservation') }}" class="px-8 py-3.5 text-xs tracking-[0.25em] uppercase bg-gold text-gold-foreground hover:shadow-glow transition-shadow">
+				Réserver une table
+			</a>
+			<a href="{{ path('menu') }}" class="px-8 py-3.5 text-xs tracking-[0.25em] uppercase border border-foreground/40 hover:border-gold hover:text-gold transition-colors">
+				Découvrir le menu
+			</a>
+		</div>
+	</div>
+</section>

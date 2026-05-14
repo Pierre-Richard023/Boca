@@ -1,0 +1,64 @@
+{% set currentRoute = app.request.attributes.get('_route') %}
+
+<header class="sticky top-0 z-50 backdrop-blur-md bg-background/75 border-b border-border">
+	<div class="container-prose flex items-center justify-between h-20">
+		<a href="{{ path('home') }}" class="flex items-center gap-3" aria-label="Boca — Accueil">
+			<img src="{{ asset('images/logo.png') }}" alt="Logo Boca" width="40" height="40" class="h-10 w-auto"/>
+			<span class="font-serif text-2xl tracking-wide">Boca</span>
+		</a>
+
+		<nav class="hidden md:flex items-center gap-10">
+			<a href="{{ path('home') }}" class="text-sm tracking-wider uppercase {{ currentRoute == 'home' ? 'text-gold' : 'text-muted-foreground' }} hover:text-gold transition-colors">
+				Accueil
+			</a>
+
+			<a href="{{ path('menu') }}" class="text-sm tracking-wider uppercase {{ currentRoute == 'menu' ? 'text-gold' : 'text-muted-foreground' }} hover:text-gold transition-colors">
+				Menu
+			</a>
+
+			<a href="{{ path('about') }}" class="text-sm tracking-wider uppercase {{ currentRoute == 'about' ? 'text-gold' : 'text-muted-foreground' }} hover:text-gold transition-colors">
+				À propos
+			</a>
+
+			<a href="{{ path('contact') }}" class="text-sm tracking-wider uppercase {{ currentRoute == 'contact' ? 'text-gold' : 'text-muted-foreground' }} hover:text-gold transition-colors">
+				Contact
+			</a>
+		</nav>
+
+		<div class="hidden md:flex items-center">
+			<a href="{{ path('reservation') }}" class="inline-flex items-center px-5 py-2.5 text-xs tracking-[0.2em] uppercase border border-gold text-gold hover:bg-gold hover:text-gold-foreground transition-colors">
+				Réserver
+			</a>
+		</div>
+
+		<button id="menu-toggle" class="md:hidden text-foreground" aria-label="Menu" type="button">
+			<svg width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+				<path d="M3 12h18M3 6h18M3 18h18"/>
+			</svg>>
+		</button>
+	</div>
+
+	<div id="mobile-menu" class="hidden md:hidden border-t border-border bg-background">
+		<div class="container-prose py-6 flex flex-col gap-4">
+			<a href="{{ path('home') }}" class="text-sm uppercase tracking-wider {{ currentRoute == 'home' ? 'text-gold' : 'text-muted-foreground' }} hover:text-gold">
+				Accueil
+			</a>
+
+			<a href="{{ path('menu') }}" class="text-sm uppercase tracking-wider {{ currentRoute == 'menu' ? 'text-gold' : 'text-muted-foreground' }} hover:text-gold">
+				Menu
+			</a>
+
+			<a href="{{ path('about') }}" class="text-sm uppercase tracking-wider {{ currentRoute == 'about' ? 'text-gold' : 'text-muted-foreground' }} hover:text-gold">
+				À propos
+			</a>
+
+			<a href="{{ path('contact') }}" class="text-sm uppercase tracking-wider {{ currentRoute == 'contact' ? 'text-gold' : 'text-muted-foreground' }} hover:text-gold">
+				Contact
+			</a>
+
+			<a href="{{ path('reservation') }}" class="mt-2 inline-flex items-center justify-center px-5 py-3 text-xs tracking-[0.2em] uppercase border border-gold text-gold">
+				Réserver une table
+			</a>
+		</div>
+	</div>
+</header>

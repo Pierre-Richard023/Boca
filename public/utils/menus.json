@@ -1,27 +1,22 @@
 [
     {
-        "id": "lunch_classic",
-        "name": "Déjeuner Classique",
-        "description": "Menu traditionnel français pour le déjeuner"
+        "id": "spring",
+        "name": "Printemps",
+        "description": "Légumes nouveaux, herbes fraîches et produits de la mer"
     },
     {
-        "id": "dinner_gourmet",
-        "name": "Dîner Gourmet",
-        "description": "Menu raffiné pour le soir"
+        "id": "summer",
+        "name": "Été",
+        "description": "Fruits juteux, légumes gorgés de soleil et grillades légères"
     },
     {
-        "id": "vegetarian_menu",
-        "name": "Menu Végétarien",
-        "description": "Cuisine française végétarienne"
+        "id": "autumn",
+        "name": "Automne",
+        "description": "Champignons des bois, gibier noble et figues gorgées"
     },
     {
-        "id": "kids_menu",
-        "name": "Menu Enfant",
-        "description": "Menu adapté aux enfants"
-    },
-    {
-        "id": "festive_menu",
-        "name": "Menu Festif",
-        "description": "Menu pour occasions spéciales"
+        "id": "winter",
+        "name": "Hiver",
+        "description": "Saveurs réconfortantes, racines d'hiver et volailles rôties"
     }
 ]

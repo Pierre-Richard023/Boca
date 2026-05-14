@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\CategoryRepository;
+use App\Repository\MenuSectionRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: CategoryRepository::class)]
-class Category
+#[ORM\Entity(repositoryClass: MenuSectionRepository::class)]
+class MenuSection
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -16,12 +16,19 @@ class Category
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $name = null;
+    private ?string $title = null;
+
+    #[ORM\Column]
+    private ?int $position = null;
+
+    #[ORM\ManyToOne(inversedBy: 'sections')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Menus $menu = null;
 
     /**
      * @var Collection<int, Dishes>
      */
-    #[ORM\OneToMany(targetEntity: Dishes::class, mappedBy: 'category', orphanRemoval: true)]
+    #[ORM\OneToMany(targetEntity: Dishes::class, mappedBy: 'section', orphanRemoval: true)]
     private Collection $dishes;
 
     public function __construct()
@@ -34,14 +41,38 @@ class Category
         return $this->id;
     }
 
-    public function getName(): ?string
+    public function getTitle(): ?string
     {
-        return $this->name;
+        return $this->title;
     }
 
-    public function setName(string $name): static
+    public function setTitle(string $title): static
     {
-        $this->name = $name;
+        $this->title = $title;
+
+        return $this;
+    }
+
+    public function getPosition(): ?int
+    {
+        return $this->position;
+    }
+
+    public function setPosition(int $position): static
+    {
+        $this->position = $position;
+
+        return $this;
+    }
+
+    public function getMenu(): ?Menus
+    {
+        return $this->menu;
+    }
+
+    public function setMenu(?Menus $menu): static
+    {
+        $this->menu = $menu;
 
         return $this;
     }
@@ -58,7 +89,7 @@ class Category
     {
         if (!$this->dishes->contains($dish)) {
             $this->dishes->add($dish);
-            $dish->setCategory($this);
+            $dish->setSection($this);
         }
 
         return $this;
@@ -68,8 +99,8 @@ class Category
     {
         if ($this->dishes->removeElement($dish)) {
             // set the owning side to null (unless already changed)
-            if ($dish->getCategory() === $this) {
-                $dish->setCategory(null);
+            if ($dish->getSection() === $this) {
+                $dish->setSection(null);
             }
         }
 

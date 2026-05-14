@@ -16,6 +16,24 @@ class ReservationsRepository extends ServiceEntityRepository
         parent::__construct($registry, Reservations::class);
     }
 
+
+
+    public function countGuestsForSlot(\DateTimeInterface $date, \DateTimeInterface $time): int
+    {
+        return (int) $this->createQueryBuilder('r')
+            ->select('COALESCE(SUM(r.guests), 0)')
+            ->andWhere('r.reservation_date = :date')
+            ->andWhere('r.reservation_time = :time')
+            // optionnel : filtrer les réservations annulées
+            ->andWhere('r.status != :cancelled')
+            ->setParameter('date', $date)
+            ->setParameter('time', $time)
+            ->setParameter('cancelled', 'cancelled')
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
+
+
     //    /**
     //     * @return Reservations[] Returns an array of Reservations objects
     //     */

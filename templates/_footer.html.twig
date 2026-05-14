@@ -1,0 +1,39 @@
+<footer class="mt-32 border-t border-border bg-card/30">
+	<div class="container-prose py-16 grid md:grid-cols-3 gap-12">
+		<div>
+			<h3 class="font-serif text-2xl">Boca</h3>
+			<p class="mt-4 text-sm text-muted-foreground leading-relaxed">
+				Une cuisine d'auteur, une expérience inoubliable. Au cœur de la ville depuis 1987.
+			</p>
+		</div>
+
+		<div>
+			<p class="divider-gold mb-4">Horaires</p>
+			<ul class="space-y-1.5 text-sm text-muted-foreground list-none p-0">
+				<li>Mardi – Jeudi : 19h – 22h30</li>
+				<li>Vendredi – Samedi : 19h – 23h30</li>
+				<li>Dimanche : 12h – 15h, 19h – 22h</li>
+				<li>Lundi : Fermé</li>
+			</ul>
+		</div>
+
+		<div>
+			<p class="divider-gold mb-4">Contact</p>
+			<ul class="space-y-1.5 text-sm text-muted-foreground list-none p-0">
+				<li>12 rue des Lumières, 75008 Paris</li>
+				<li>+33 1 42 00 00 00</li>
+				<li>contact@boca.fr</li>
+			</ul>
+
+			<a href="{{ path('reservation') }}" class="inline-block mt-6 text-xs uppercase tracking-[0.2em] text-gold border-b border-gold pb-1">
+				Réserver une table
+			</a>
+		</div>
+	</div>
+
+	<div class="border-t border-border py-6 text-center text-xs text-muted-foreground">
+		©
+		{{ "now"|date("Y") }}
+		Boca — Tous droits réservés
+	</div>
+</footer>

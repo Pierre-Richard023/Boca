@@ -28,11 +28,7 @@ class Dishes
 
     #[ORM\ManyToOne(inversedBy: 'dishes')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Menus $menu = null;
-
-    #[ORM\ManyToOne(inversedBy: 'dishes')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?Category $category = null;
+    private ?MenuSection $section = null;
 
     public function getId(): ?int
     {
@@ -87,26 +83,14 @@ class Dishes
         return $this;
     }
 
-    public function getMenu(): ?Menus
+    public function getSection(): ?MenuSection
     {
-        return $this->menu;
+        return $this->section;
     }
 
-    public function setMenu(?Menus $menu): static
+    public function setSection(?MenuSection $section): static
     {
-        $this->menu = $menu;
-
-        return $this;
-    }
-
-    public function getCategory(): ?Category
-    {
-        return $this->category;
-    }
-
-    public function setCategory(?Category $category): static
-    {
-        $this->category = $category;
+        $this->section = $section;
 
         return $this;
     }

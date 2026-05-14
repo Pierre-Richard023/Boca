@@ -2,9 +2,8 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\Category;
 use App\Entity\Dishes;
-use App\Entity\Menus;
+use App\Entity\MenuSection;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
@@ -26,20 +25,16 @@ class DishesFixtures extends Fixture implements DependentFixtureInterface
 
             foreach ($data as $categoryName => $dishes) {
 
-                $category = $this->getReference('category_' . $categoryName, Category::class);
-
                 foreach ($dishes as $d) {
 
-                    $dish = new Dishes();
-                    $menu = $this->getReference('menu_' . $d['menu-id'], Menus::class);
+                    $menuSection = $this->getReference('section_' . $d['menu-id'] . '_' . $categoryName, MenuSection::class);
 
+                    $dish = new Dishes();
                     $dish->setName($d['name'])
                         ->setDescription($d['description'])
                         ->setPrice($d['price'])
                         ->setIsAvailable(true)
-                        ->setMenu($menu)
-                        ->setCategory($category)
-
+                        ->setSection($menuSection)
                     ;
                     $manager->persist($dish);
                 }
@@ -51,8 +46,7 @@ class DishesFixtures extends Fixture implements DependentFixtureInterface
     public function getDependencies(): array
     {
         return [
-            CategoryFixtures::class,
-            MenusFixtures::class
+            MenuSectionFixtures::class,
         ];
     }
 }

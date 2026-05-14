@@ -1,368 +1,296 @@
 {
     "starters": [
         {
-            "menu-id": "lunch_classic",
-            "name": "Soupe à l'oignon",
-            "description": "Soupe aux oignons gratinée au fromage",
-            "price": 7.5
+            "menu-id": "spring",
+            "name": "Asperges vertes et œuf poché",
+            "description": "Asperges vertes de saison, œuf poché parfait, crème légère au citron vert",
+            "price": 18
         },
         {
-            "menu-id": "lunch_classic",
-            "name": "Salade Niçoise",
-            "description": "Thon, œufs, olives et légumes frais",
-            "price": 9.0
+            "menu-id": "spring",
+            "name": "Velouté d'artichauts et truffe fraîche",
+            "description": "Velouté onctueux d'artichauts du Printemps, éclats de truffe noire fraîche",
+            "price": 22
         },
         {
-            "menu-id": "lunch_classic",
-            "name": "Œufs mimosa",
-            "description": "Œufs farcis à la mayonnaise maison",
-            "price": 6.5
+            "menu-id": "spring",
+            "name": "Saint-Jacques de Bretagne",
+            "description": "Saint-Jacques juste saisies, beurre blanc aux herbes printanières",
+            "price": 28
         },
         {
-            "menu-id": "lunch_classic",
-            "name": "Terrine de campagne",
-            "description": "Terrine maison et cornichons",
-            "price": 8.0
+            "menu-id": "spring",
+            "name": "Carpaccio de radis et ricotta",
+            "description": "Radis roses croquants, ricotta de chèvre frais, huile de noisette",
+            "price": 16
         },
         {
-            "menu-id": "dinner_gourmet",
-            "name": "Foie gras maison",
-            "description": "Servi avec chutney de figues",
-            "price": 15.0
+            "menu-id": "summer",
+            "name": "Salade de tomates anciennes et burrata",
+            "description": "Tomates Cœur de Bœuf et Noire de Crimée, burrata de Puglia",
+            "price": 19
         },
         {
-            "menu-id": "dinner_gourmet",
-            "name": "Tartare de saumon",
-            "description": "Saumon frais et citron vert",
-            "price": 12.0
+            "menu-id": "summer",
+            "name": "Gazpacho andalou revisité",
+            "description": "Gazpacho frais tomates et poivrons, sorbet concombre et menthe",
+            "price": 17
         },
         {
-            "menu-id": "dinner_gourmet",
-            "name": "Carpaccio de bœuf",
-            "description": "Bœuf cru et parmesan",
-            "price": 13.0
+            "menu-id": "summer",
+            "name": "Tartare de maquereau frais",
+            "description": "Maquereau de pêche locale, citron caviar, pain de seigle croustillant",
+            "price": 20
         },
         {
-            "menu-id": "dinner_gourmet",
-            "name": "Velouté de potiron",
-            "description": "Crème et muscade",
-            "price": 8.0
+            "menu-id": "summer",
+            "name": "Concombre et melon en gelée",
+            "description": "Gelée de concombre et melon Charentais, crème aigre fouettée",
+            "price": 15
         },
         {
-            "menu-id": "vegetarian_menu",
-            "name": "Salade de chèvre chaud",
-            "description": "Fromage de chèvre et miel",
-            "price": 9.5
+            "menu-id": "autumn",
+            "name": "Œufs en cocotte aux cèpes",
+            "description": "Œufs fermiers pochés, cèpes d'automne, crème de noisette",
+            "price": 21
         },
         {
-            "menu-id": "vegetarian_menu",
-            "name": "Velouté de légumes",
-            "description": "Légumes de saison",
-            "price": 7.0
+            "menu-id": "autumn",
+            "name": "Tartare de betteraves rôties",
+            "description": "Betteraves Chioggia rôties, raifort frais, chips de betterave",
+            "price": 17
         },
         {
-            "menu-id": "vegetarian_menu",
-            "name": "Carpaccio de betteraves",
-            "description": "Fromage frais",
-            "price": 8.0
+            "menu-id": "autumn",
+            "name": "Velouté de potimarron",
+            "description": "Potimarron du jardin, châtaignes grillées, huile de truffe",
+            "price": 19
         },
         {
-            "menu-id": "vegetarian_menu",
-            "name": "Caviar d’aubergine",
-            "description": "Aubergines grillées",
-            "price": 8.5
+            "menu-id": "autumn",
+            "name": "Châtaignes et foie gras",
+            "description": "Châtaignes confites, escalope de foie gras poêlée",
+            "price": 26
         },
         {
-            "menu-id": "kids_menu",
-            "name": "Tomates cerises",
-            "description": "Tomates fraîches",
-            "price": 4.0
+            "menu-id": "winter",
+            "name": "Tartare de légumes d'hiver",
+            "description": "Panais, topinambours, navets boule d'or, vinaigrette de sésame",
+            "price": 18
         },
         {
-            "menu-id": "kids_menu",
-            "name": "Soupe de légumes",
-            "description": "Douce et légère",
-            "price": 4.5
+            "menu-id": "winter",
+            "name": "Soupe de châtaignes fumée",
+            "description": "Châtaignes fumées Ardèche, lard de colonnata, croûton aillé",
+            "price": 20
         },
         {
-            "menu-id": "kids_menu",
-            "name": "Mini salade",
-            "description": "Salade verte",
-            "price": 4.0
+            "menu-id": "winter",
+            "name": "Saint-Jacques rôties, chou kale",
+            "description": "Saint-Jacques coquille, chou kale sauté, beurre piment d'Espelette",
+            "price": 27
         },
         {
-            "menu-id": "kids_menu",
-            "name": "Œuf dur",
-            "description": "Œuf nature",
-            "price": 3.5
-        },
-        {
-            "menu-id": "festive_menu",
-            "name": "Saumon fumé",
-            "description": "Blinis et crème fraîche",
-            "price": 13.0
-        },
-        {
-            "menu-id": "festive_menu",
-            "name": "Foie gras",
-            "description": "Pain brioché",
-            "price": 18.0
-        },
-        {
-            "menu-id": "festive_menu",
-            "name": "Saint-Jacques",
-            "description": "Poêlées",
-            "price": 16.0
-        },
-        {
-            "menu-id": "festive_menu",
-            "name": "Velouté de langoustines",
-            "description": "Crémeux",
-            "price": 14.0
+            "menu-id": "winter",
+            "name": "Foie gras de canard mi-cuit",
+            "description": "Foie gras Landes mi-cuit, pain brioché, chutney oignons",
+            "price": 29
         }
     ],
     "mains": [
         {
-            "menu-id": "lunch_classic",
-            "name": "Bœuf Bourguignon",
-            "description": "Bœuf mijoté au vin rouge",
-            "price": 18.5
+            "menu-id": "spring",
+            "name": "Risotto aux morilles et petits pois",
+            "description": "Risotto carnaroli, morilles des bois, petits pois tendres du jardin",
+            "price": 36
         },
         {
-            "menu-id": "lunch_classic",
-            "name": "Poulet Basquaise",
-            "description": "Poulet mijoté aux poivrons",
-            "price": 16.0
+            "menu-id": "spring",
+            "name": "Agneau de lait printanier confit",
+            "description": "Épaule d'agneau confite 48h, légumes nouveaux, jus d'herbes",
+            "price": 42
         },
         {
-            "menu-id": "lunch_classic",
-            "name": "Steak frites",
-            "description": "Steak grillé et frites maison",
-            "price": 17.5
+            "menu-id": "spring",
+            "name": "Filet de bar sauvage aux herbes",
+            "description": "Bar de ligne sauvage, peau croustillante, beurre blanc aux baies roses",
+            "price": 38
         },
         {
-            "menu-id": "lunch_classic",
-            "name": "Filet de saumon",
-            "description": "Saumon rôti sauce citron",
-            "price": 18.0
+            "menu-id": "spring",
+            "name": "Filet de bœuf maturé",
+            "description": "Filet de bœuf Black Angus maturé 28 jours, sauce au vin de Bergerac",
+            "price": 48
         },
         {
-            "menu-id": "dinner_gourmet",
-            "name": "Magret de canard",
-            "description": "Sauce fruits rouges",
-            "price": 22.0
+            "menu-id": "summer",
+            "name": "Filet de dorade grillée, salsa tomates",
+            "description": "Dorade royale grillée, salsa tomates cerises et coriandre fraîche",
+            "price": 39
         },
         {
-            "menu-id": "dinner_gourmet",
-            "name": "Cabillaud rôti",
-            "description": "Sauce beurre blanc",
-            "price": 20.0
+            "menu-id": "summer",
+            "name": "Blanquette de veau légère",
+            "description": "Blanquette moderne de veau rosé, légumes d'été, riz basmati parfumé",
+            "price": 37
         },
         {
-            "menu-id": "dinner_gourmet",
-            "name": "Risotto aux champignons",
-            "description": "Risotto crémeux",
-            "price": 18.0
+            "menu-id": "summer",
+            "name": "Ravioles d'épeautre aux courgettes",
+            "description": "Ravioles artisanales farcies courgette et ricotta, beurre citronné",
+            "price": 34
         },
         {
-            "menu-id": "dinner_gourmet",
-            "name": "Filet de veau",
-            "description": "Sauce forestière",
-            "price": 23.0
+            "menu-id": "summer",
+            "name": "Magret de canard rosé",
+            "description": "Magret de barbarie rosé, abricots rôtis, sauce soja et miel",
+            "price": 41
         },
         {
-            "menu-id": "vegetarian_menu",
-            "name": "Ratatouille",
-            "description": "Légumes provençaux",
-            "price": 15.0
+            "menu-id": "autumn",
+            "name": "Gibier en civet grand veneur",
+            "description": "Chevreuil sauvage en civet, betteraves glacées, polenta crémeuse",
+            "price": 46
         },
         {
-            "menu-id": "vegetarian_menu",
-            "name": "Lasagnes végétariennes",
-            "description": "Légumes et fromage",
-            "price": 16.0
+            "menu-id": "autumn",
+            "name": "Suprême de volaille aux champignons",
+            "description": "Poularde fermière rôtie, girolles et pleurotes des bois",
+            "price": 38
         },
         {
-            "menu-id": "vegetarian_menu",
-            "name": "Quiche aux légumes",
-            "description": "Quiche maison",
-            "price": 14.0
+            "menu-id": "autumn",
+            "name": "Cabillaud rôti, beurre blanc aux noix",
+            "description": "Cabillaud sauvage rôti, beurre blanc noix du Périgord",
+            "price": 40
         },
         {
-            "menu-id": "vegetarian_menu",
-            "name": "Risotto aux légumes",
-            "description": "Crémeux et parfumé",
-            "price": 15.5
+            "menu-id": "autumn",
+            "name": "Entrecôte maturée aux salsifis",
+            "description": "Entrecôte Black Angus 35 jours, salsifis meunière",
+            "price": 47
         },
         {
-            "menu-id": "kids_menu",
-            "name": "Nuggets de poulet",
-            "description": "Poulet pané",
-            "price": 8.0
+            "menu-id": "winter",
+            "name": "Civet de sanglier aux baies",
+            "description": "Sanglier sauvage cuit longuement, baies de genièvre, purée de céleri",
+            "price": 45
         },
         {
-            "menu-id": "kids_menu",
-            "name": "Steak haché",
-            "description": "Viande grillée",
-            "price": 8.5
+            "menu-id": "winter",
+            "name": "Filet mignon au vin rouge",
+            "description": "Filet mignon porcin, sauce Madiran, légumes d'hiver braisés",
+            "price": 39
         },
         {
-            "menu-id": "kids_menu",
-            "name": "Pâtes nature",
-            "description": "Pâtes au beurre",
-            "price": 7.0
+            "menu-id": "winter",
+            "name": "Turbot poché, sauce hollandaise",
+            "description": "Turbot sauvage poché, hollandaise légère, asperges blanches",
+            "price": 44
         },
         {
-            "menu-id": "kids_menu",
-            "name": "Poisson pané",
-            "description": "Poisson croustillant",
-            "price": 8.0
-        },
-        {
-            "menu-id": "festive_menu",
-            "name": "Filet de bœuf",
-            "description": "Sauce truffe",
-            "price": 28.0
-        },
-        {
-            "menu-id": "festive_menu",
-            "name": "Carré d’agneau",
-            "description": "Rôti au thym",
-            "price": 26.0
-        },
-        {
-            "menu-id": "festive_menu",
-            "name": "Homard grillé",
-            "description": "Beurre aux herbes",
-            "price": 30.0
-        },
-        {
-            "menu-id": "festive_menu",
-            "name": "Risotto aux truffes",
-            "description": "Truffes noires",
-            "price": 24.0
+            "menu-id": "winter",
+            "name": "Boeuf bourguignon revisité",
+            "description": "Boeuf Charolais braisé Pinot Noir, lardons artisanaux, carottes fanées",
+            "price": 43
         }
     ],
     "desserts": [
         {
-            "menu-id": "lunch_classic",
-            "name": "Crème brûlée",
-            "description": "Crème vanille caramélisée",
-            "price": 6.5
+            "menu-id": "spring",
+            "name": "Fraises des bois & or",
+            "description": "Fraises des bois sauvages, feuille d'or 24k, sorbet yaourt fermier",
+            "price": 15
         },
         {
-            "menu-id": "lunch_classic",
-            "name": "Tarte Tatin",
-            "description": "Pommes caramélisées",
-            "price": 7.0
+            "menu-id": "spring",
+            "name": "Sorbet au citron vert et basilic",
+            "description": "Sorbet artisanal citron vert de Cayenne, émulsion basilic thaï",
+            "price": 12
         },
         {
-            "menu-id": "lunch_classic",
-            "name": "Mousse au chocolat",
-            "description": "Chocolat noir intense",
-            "price": 6.5
+            "menu-id": "spring",
+            "name": "Charlotte aux fraises de saison",
+            "description": "Charlotte légère, fraises Gariguette, crème fouettée vanille Tahiti",
+            "price": 14
         },
         {
-            "menu-id": "lunch_classic",
-            "name": "Île flottante",
-            "description": "Blancs en neige et crème anglaise",
-            "price": 6.0
+            "menu-id": "spring",
+            "name": "Panna cotta à la rhubarbe",
+            "description": "Panna cotta vanille de Madagascar, compotée de rhubarbe Victoria",
+            "price": 13
         },
         {
-            "menu-id": "dinner_gourmet",
-            "name": "Fondant au chocolat",
-            "description": "Cœur coulant",
-            "price": 7.0
+            "menu-id": "summer",
+            "name": "Fruits rouges & or",
+            "description": "Groseilles, framboises, mûres sauvages, feuille d'or comestible",
+            "price": 16
         },
         {
-            "menu-id": "dinner_gourmet",
-            "name": "Profiteroles",
-            "description": "Sauce chocolat chaud",
-            "price": 7.5
+            "menu-id": "summer",
+            "name": "Sorbet pêche de vigne",
+            "description": "Pêche de vigne Charente, sorbet intense, éclats de meringue",
+            "price": 13
         },
         {
-            "menu-id": "dinner_gourmet",
-            "name": "Tarte citron meringuée",
-            "description": "Citron frais",
-            "price": 7.0
+            "menu-id": "summer",
+            "name": "Tarte fine aux abricots",
+            "description": "Tarte sablée fine, abricots du Roussillon, crème d'amande légère",
+            "price": 15
         },
         {
-            "menu-id": "dinner_gourmet",
-            "name": "Fromages affinés",
-            "description": "Sélection française",
-            "price": 8.0
+            "menu-id": "summer",
+            "name": "Mousse légère au citron",
+            "description": "Mousse aérienne citron de Menton, biscuit madeleine maison",
+            "price": 14
         },
         {
-            "menu-id": "vegetarian_menu",
-            "name": "Salade de fruits",
-            "description": "Fruits frais",
-            "price": 6.0
+            "menu-id": "autumn",
+            "name": "Tarte Tatin aux pommes",
+            "description": "Tarte Tatin maison, pommes Boskop, glace vanille bourbon",
+            "price": 15
         },
         {
-            "menu-id": "vegetarian_menu",
-            "name": "Panna cotta",
-            "description": "Coulis fruits rouges",
-            "price": 6.5
+            "menu-id": "autumn",
+            "name": "Châtaignes et chocolat",
+            "description": "Mont-blanc revisité, crème de marrons, ganache 70%",
+            "price": 16
         },
         {
-            "menu-id": "vegetarian_menu",
-            "name": "Tarte aux pommes",
-            "description": "Pommes caramélisées",
-            "price": 6.5
+            "menu-id": "autumn",
+            "name": "Poire pochée au vin épicé",
+            "description": "Poire Williams pochée Gewürztraminer, sabayon léger",
+            "price": 14
         },
         {
-            "menu-id": "vegetarian_menu",
-            "name": "Sorbet citron",
-            "description": "Rafraîchissant",
-            "price": 5.5
+            "menu-id": "autumn",
+            "name": "Crème brûlée à la figue",
+            "description": "Crème brûlée vanille, marmelade de figues violette",
+            "price": 13
         },
         {
-            "menu-id": "kids_menu",
-            "name": "Glace vanille",
-            "description": "1 boule",
-            "price": 3.0
+            "menu-id": "winter",
+            "name": "Fondant au chocolat coulant",
+            "description": "Fondant 68% chocolat Venezuela, cœur coulant, glace pistache",
+            "price": 15
         },
         {
-            "menu-id": "kids_menu",
-            "name": "Brownie",
-            "description": "Petit gâteau chocolat",
-            "price": 3.5
+            "menu-id": "winter",
+            "name": "Citron givré et meringue",
+            "description": "Sorbet citron Meyer, meringue italienne, tuile de nougatine",
+            "price": 14
         },
         {
-            "menu-id": "kids_menu",
-            "name": "Compote de pommes",
-            "description": "Maison",
-            "price": 3.0
+            "menu-id": "winter",
+            "name": "Île flottante vanille bourbon",
+            "description": "Meringue poire, crème anglaise vanille de La Réunion",
+            "price": 13
         },
         {
-            "menu-id": "kids_menu",
-            "name": "Crêpe sucre",
-            "description": "Crêpe fine",
-            "price": 3.0
-        },
-        {
-            "menu-id": "festive_menu",
-            "name": "Bûche de Noël",
-            "description": "Traditionnelle",
-            "price": 8.0
-        },
-        {
-            "menu-id": "festive_menu",
-            "name": "Mille-feuille",
-            "description": "Crème pâtissière",
-            "price": 7.5
-        },
-        {
-            "menu-id": "festive_menu",
-            "name": "Soufflé chocolat",
-            "description": "Léger et chaud",
-            "price": 7.5
-        },
-        {
-            "menu-id": "festive_menu",
-            "name": "Parfait glacé",
-            "description": "Vanille et fruits",
-            "price": 7.0
+            "menu-id": "winter",
+            "name": "Pain d'épices et crème",
+            "description": "Pain d'épices maison, crème mascarpone orange sanguine",
+            "price": 14
         }
     ]
 }

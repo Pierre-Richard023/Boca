@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ parent() }}
+	- Contact
+{% endblock %}
+
+{% block body %}
+
+	<section class="container-prose py-8 md:py-12">
+		<div class="text-center max-w-2xl mx-auto">
+			<span class="divider-gold mb-6">Nous trouver</span>
+			<h1 class="font-serif text-5xl md:text-6xl">Contact</h1>
+			<p class="mt-6 text-muted-foreground">
+				Une question, un événement privé, une demande spécifique ? Notre équipe est à votre écoute.
+			</p>
+		</div>
+
+		<div class="mt-16 grid md:grid-cols-2 gap-10">
+			<div class="flex gap-5 p-8 border border-border bg-card/30">
+				<svg width="28" height="28" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-gold shrink-0"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+				<div>
+					<h3 class="font-serif text-2xl">Adresse</h3>
+					<div class="mt-2 text-sm text-muted-foreground space-y-1">
+						<p>12 rue des Lumières</p>
+						<p>75008 Paris</p>
+					</div>
+				</div>
+			</div>
+			<div class="flex gap-5 p-8 border border-border bg-card/30">
+				<svg width="28" height="28" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-gold shrink-0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+				<div>
+					<h3 class="font-serif text-2xl">Téléphone</h3>
+					<div class="mt-2 text-sm text-muted-foreground">
+						<p>+33 1 42 00 00 00</p>
+					</div>
+				</div>
+			</div>
+			<div class="flex gap-5 p-8 border border-border bg-card/30">
+				<svg width="28" height="28" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-gold shrink-0"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+				<div>
+					<h3 class="font-serif text-2xl">Email</h3>
+					<div class="mt-2 text-sm text-muted-foreground">
+						<p>contact@boca.fr</p>
+					</div>
+				</div>
+			</div>
+			<div class="flex gap-5 p-8 border border-border bg-card/30">
+				<svg width="28" height="28" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-gold shrink-0"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+				<div>
+					<h3 class="font-serif text-2xl">Horaires</h3>
+					<div class="mt-2 text-sm text-muted-foreground space-y-1">
+						<p>Mar–Jeu : 19h – 22h30</p>
+						<p>Ven–Sam : 19h – 23h30</p>
+						<p>Dim : 12h–15h, 19h–22h</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="mt-16 text-center">
+			<a href="{{ path('reservation') }}" class="inline-block px-10 py-4 text-xs tracking-[0.25em] uppercase bg-gold text-gold-foreground hover:shadow-glow transition-shadow">
+				Réserver une table
+			</a>
+		</div>
+	</section>
+
+
+{% endblock %}

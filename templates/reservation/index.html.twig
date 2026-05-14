@@ -1,0 +1,113 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ parent() }}
+	- Réservations
+{% endblock %}
+
+{% block body %}
+
+
+	<main class="container-prose py-8 md:py-12 max-w-2xl">
+		<div id="form-wrap">
+			<div class="text-center">
+				<span class="divider-gold mb-6">Réservation</span>
+				<h1 class="font-serif text-5xl md:text-6xl">Réserver une table</h1>
+				<p class="mt-6 text-muted-foreground">
+					Choisissez votre date et votre créneau. Confirmation immédiate.
+				</p>
+			</div>
+
+
+			<div class="max-w-2xl mx-auto" id="form-wrap" {{ stimulus_controller('reservation-slots') }}>
+
+				{% for label, messages in app.flashes %}
+					{% for message in messages %}
+						<div class="mb-4 px-4 py-3 rounded border {{ label == 'success' ? 'border-emerald-500 text-emerald-700 bg-emerald-50' : 'border-red-500 text-red-700 bg-red-50' }}">
+							{{ message }}
+						</div>
+					{% endfor %}
+				{% endfor %}
+
+				{{ form_start(form, { attr: {id: 'reservation-form',class: 'mt-10 space-y-6'}}) }}
+
+				<div class="grid sm:grid-cols-2 gap-4">
+					<label class="block">
+						<span class="block text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2">
+							Nom complet
+							<span class="text-gold">*</span>
+						</span>
+						{{ form_widget(form.customer_name, { attr: {class: 'r-input','data-reservation-slots-target': 'name'}}) }}
+						{{ form_errors(form.customer_name) }}
+					</label>
+
+					<label class="block">
+						<span class="block text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2">
+							Téléphone
+							<span class="text-gold">*</span>
+						</span>
+						{{ form_widget(form.customer_phone, { attr: {class: 'r-input','data-reservation-slots-target': 'phone'}}) }}
+						{{ form_errors(form.customer_phone) }}
+					</label>
+				</div>
+
+				<label class="block">
+					<span class="block text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2">
+						Email
+						<span class="text-gold">*</span>
+					</span>
+					{{ form_widget(form.customer_email, { attr: {class: 'r-input','data-reservation-slots-target': 'email'}}) }}
+					{{ form_errors(form.customer_email) }}
+				</label>
+
+				<div class="grid sm:grid-cols-2 gap-4">
+					<label class="block">
+						<span class="block text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2">
+							Convives
+							<span class="text-gold">*</span>
+						</span>
+						{{ form_widget(form.guests, {attr: {class: 'r-input','data-reservation-slots-target': 'partySize'}}) }}
+						{{ form_errors(form.guests) }}
+					</label>
+
+					<label class="block">
+						<span class="block text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2">
+							Date
+							<span class="text-gold">*</span>
+						</span>
+						{{ form_widget(form.reservation_date, {attr: {class: 'r-input',type: 'date','data-reservation-slots-target': 'date'}}) }}
+						{{ form_errors(form.reservation_date) }}
+					</label>
+				</div>
+
+				<div class="block">
+					<span class="block text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">
+						Créneau
+						<span class="text-gold">*</span>
+					</span>
+					{{ form_widget(form.reservation_time, { attr: {id: 'reservation_time',class: 'hidden','data-reservation-slots-target': 'timeInput'}}) }}
+					{{ form_errors(form.reservation_time) }}
+
+					<div id="slots" class="grid grid-cols-3 sm:grid-cols-4 gap-2" data-reservation-slots-target="slots"></div>
+				</div>
+
+				<label class="block">
+					<span class="block text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2">
+						Demandes particulières (facultatif)
+					</span>
+					{{ form_widget(form.message, {attr: {class: 'r-input resize-none',rows: 4,placeholder: 'Allergies, occasion spéciale, préférence de table…','data-reservation-slots-target': 'notes'}}) }}
+					{{ form_errors(form.message) }}
+				</label>
+
+				<button id="submit-btn" type="submit" class="w-full px-8 py-4 text-xs tracking-[0.25em] uppercase bg-gold text-gold-foreground hover:shadow-glow transition-shadow" data-reservation-slots-target="submitBtn">
+					Confirmer la réservation
+				</button>
+
+				{{ form_end(form) }}
+			</div>
+
+		</div>
+	</main>
+
+
+{% endblock %}

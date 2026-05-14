@@ -1,0 +1,91 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ parent() }}
+	- Menu
+{% endblock %}
+
+{% block body %}
+
+
+	<main class="container-prose py-8 md:py-12" {{ stimulus_controller('season-menu', { activeId: menus|length ? (menus|first.name|slug) : null } ) }}>
+		<div class="text-center max-w-2xl mx-auto">
+			<span class="divider-gold mb-6">Nos cartes</span>
+			<h1 class="font-serif text-5xl md:text-6xl">Menus de saison</h1>
+			<p class="mt-6 text-muted-foreground">
+				Notre carte évolue au fil des saisons. Sélectionnez un menu pour découvrir les plats préparés à partir des meilleurs produits du moment.
+			</p>
+		</div>
+
+		{% if menus|length %}
+			<div class="mt-12 flex flex-wrap justify-center gap-2 md:gap-3" role="tablist" aria-label="Sélection du menu">
+				{% for menu in menus %}
+					{% set menuKey = menu.name|slug %}
+
+					<button type="button" role="tab" id="menu-tab-{{ menuKey }}" aria-controls="menu-panel-{{ menuKey }}" aria-selected="{{ loop.first ? 'true' : 'false' }}" data-id="{{ menuKey }}" {{ stimulus_target('season-menu', 'tab') }} {{ stimulus_action('season-menu', 'select', 'click') }} class="px-5 py-2.5 text-sm tracking-wider uppercase border transition-colors {{ loop.first ? 'bg-gold text-background border-gold' : 'border-border/60 text-foreground hover:border-gold hover:text-gold' }}">
+						{{ menu.name }}
+					</button>
+				{% endfor %}
+			</div>
+
+			{% for menu in menus %}
+				{% set menuKey = menu.name|slug %}
+
+				<section id="menu-panel-{{ menuKey }}" role="tabpanel" aria-labelledby="menu-tab-{{ menuKey }}" data-id="{{ menuKey }}" {{ stimulus_target('season-menu', 'panel') }} class="{{ loop.first ? '' : 'hidden' }}">
+					{% if menu.description %}
+						<p class="mt-6 text-center text-sm italic text-muted-foreground">
+							{{ menu.description }}
+						</p>
+					{% endif %}
+
+					<div class="mt-16 grid gap-20">
+						{% for section in menu.sections %}
+							<section>
+								<h2 class="font-serif text-3xl md:text-4xl text-gold text-center mb-12">
+									{{ section.title }}
+								</h2>
+
+								<div class="max-w-3xl mx-auto space-y-8">
+									{% for dish in section.dishes %}
+										<div class="flex items-baseline gap-4 pb-6 {{ not loop.last ? 'border-b border-border' : '' }}">
+											<div class="flex-1">
+												<h3 class="font-serif text-xl">
+													{{ dish.name }}
+												</h3>
+
+												{% if dish.description %}
+													<p class="mt-1.5 text-sm text-muted-foreground italic">
+														{{ dish.description }}
+													</p>
+												{% endif %}
+											</div>
+
+											<span class="text-gold font-serif text-xl whitespace-nowrap">
+												{{ dish.price|number_format(2, ',', ' ') }}
+												€
+											</span>
+										</div>
+									{% else %}
+										<p class="text-center text-sm italic text-muted-foreground">
+											Aucun plat dans cette section.
+										</p>
+									{% endfor %}
+								</div>
+							</section>
+						{% else %}
+							<p class="text-center text-sm italic text-muted-foreground">
+								Aucune section pour ce menu.
+							</p>
+						{% endfor %}
+					</div>
+				</section>
+			{% endfor %}
+		{% else %}
+			<div class="mt-16 text-center text-muted-foreground">
+				Aucun menu disponible pour le moment.
+			</div>
+		{% endif %}
+	</main>
+
+
+{% endblock %}

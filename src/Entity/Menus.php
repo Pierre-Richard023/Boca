@@ -26,14 +26,14 @@ class Menus
     private ?bool $is_active = null;
 
     /**
-     * @var Collection<int, Dishes>
+     * @var Collection<int, MenuSection>
      */
-    #[ORM\OneToMany(targetEntity: Dishes::class, mappedBy: 'menu')]
-    private Collection $dishes;
+    #[ORM\OneToMany(targetEntity: MenuSection::class, mappedBy: 'menu', orphanRemoval: true)]
+    private Collection $sections;
 
     public function __construct()
     {
-        $this->dishes = new ArrayCollection();
+        $this->sections = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -78,29 +78,29 @@ class Menus
     }
 
     /**
-     * @return Collection<int, Dishes>
+     * @return Collection<int, MenuSection>
      */
-    public function getDishes(): Collection
+    public function getSections(): Collection
     {
-        return $this->dishes;
+        return $this->sections;
     }
 
-    public function addDish(Dishes $dish): static
+    public function addSection(MenuSection $section): static
     {
-        if (!$this->dishes->contains($dish)) {
-            $this->dishes->add($dish);
-            $dish->setMenu($this);
+        if (!$this->sections->contains($section)) {
+            $this->sections->add($section);
+            $section->setMenu($this);
         }
 
         return $this;
     }
 
-    public function removeDish(Dishes $dish): static
+    public function removeSection(MenuSection $section): static
     {
-        if ($this->dishes->removeElement($dish)) {
+        if ($this->sections->removeElement($section)) {
             // set the owning side to null (unless already changed)
-            if ($dish->getMenu() === $this) {
-                $dish->setMenu(null);
+            if ($section->getMenu() === $this) {
+                $section->setMenu(null);
             }
         }
 
