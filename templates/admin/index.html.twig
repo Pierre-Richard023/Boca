@@ -1,0 +1,44 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}
+	{{ parent() }}
+{% endblock %}
+
+{% block body %}
+	<div class="min-h-screen" data-controller="admin-dashboard" data-admin-dashboard-default-tab-value="reservationsUpcoming">
+
+		{% include "admin/_header.html.twig" %}
+
+		<div class="max-w-7xl mx-auto px-6 py-10">
+			<div class="mb-10">
+				<span class="divider-gold">Tableau de bord</span>
+				<h1 class="font-serif text-4xl md:text-5xl mt-3">Vue d'ensemble du restaurant</h1>
+			</div>
+
+			{% set tabs = { reservationsUpcoming: '📅 Réservations à venir',menu: '🍽️ Menu',reservations: '📅 Réservations passées ou annulées'} %}
+
+			<div class="flex gap-1 border-b border-border mb-10 ">
+				{% for key, label in tabs %}
+					<button type="button" class="tab-btn flex items-center gap-2 px-5 py-3 text-xs uppercase tracking-[0.2em] border-b-2 -mb-px whitespace-nowrap text-muted-foreground  hover:text-foreground" data-action="click->admin-dashboard#switch" data-admin-dashboard-target="tab" data-tab="{{ key }}">
+						{{ label }}
+					</button>
+				{% endfor %}
+			</div>
+
+			<div id="panel-reservationsUpcoming" class="panel" data-admin-dashboard-target="panel" data-panel="reservationsUpcoming">
+				{% include 'admin/panels/_reservationsUpcoming.html.twig' %}
+			</div>
+
+			<div id="panel-menu" class="panel hidden" data-admin-dashboard-target="panel" data-panel="menu">
+				{% include 'admin/panels/_menu.html.twig' %}
+			</div>
+			<div id="panel-reservations" class="panel hidden" data-admin-dashboard-target="panel" data-panel="reservations">
+				{% include 'admin/panels/_reservations.html.twig' %}
+			</div>
+		</div>
+
+		<footer class="border-t border-border mt-20 py-8 text-center text-xs text-muted-foreground ">
+			Boca · Interface d'administration · v1.0 — Données de démonstration
+		</footer>
+	</div>
+{% endblock %}

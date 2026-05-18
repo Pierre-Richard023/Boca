@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<meta name="robots" content="noindex"/>
+		<title>
+			{% block title %}
+				Boca | Administration
+			{% endblock %}
+		</title>
+		<link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}"/>
+		<link rel="apple-touch-icon" href="{{ asset('images/favicon.png') }}"/>
+
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('admin') }}
+		{% endblock %}
+
+		{% block javascripts %}
+			{{ encore_entry_script_tags('admin') }}
+		{% endblock %}
+	</head>
+	<body class="">
+		<main>
+			{% block body %}{% endblock %}
+		</main>
+	</body>
+</html>

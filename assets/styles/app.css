@@ -1,102 +1,169 @@
 @import "tailwindcss";
 @source not "../../public";
-
-
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
 
-:root {
-  --background: oklch(0.16 0.012 40);
-  --foreground: oklch(0.94 0.015 75);
-  --card: oklch(0.20 0.014 38);
-  --muted: oklch(0.22 0.012 40);
-  --muted-foreground: oklch(0.68 0.02 70);
-  --border: oklch(0.30 0.018 50 / 60%);
-  --input: oklch(0.26 0.018 45);
-  --destructive: oklch(0.55 0.21 27);
-  --gold: oklch(0.78 0.12 78);
-  --gold-foreground: oklch(0.16 0.012 40);
+@theme {
+  --color-background: oklch(0.16 0.012 40);
+  --color-foreground: oklch(0.94 0.015 75);
+  --color-charcoal: oklch(0.08 0.01 30);
+  --color-card: oklch(0.20 0.014 38);
+  --color-muted: oklch(0.22 0.012 40);
+  --color-muted-foreground: oklch(0.68 0.02 70);
+  --color-border: oklch(0.30 0.018 50 / 60%);
+  --color-input: oklch(0.26 0.018 45);
+  --color-destructive: oklch(0.55 0.21 27);
+  --color-gold: oklch(0.78 0.12 78);
+  --color-gold-foreground: oklch(0.16 0.012 40);
 
-  --gradient-hero: linear-gradient(180deg, oklch(0.10 0.01 40 / 0.55) 0%, oklch(0.10 0.01 40 / 0.85) 100%);
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+
   --shadow-elegant: 0 20px 60px -20px oklch(0 0 0 / 0.6);
   --shadow-glow: 0 0 40px oklch(0.78 0.12 78 / 0.25);
-
-  --font-serif: 'Playfair Display', Georgia, serif;
-  --font-sans: 'Inter', system-ui, sans-serif;
 }
 
-html { scroll-behavior: smooth; }
-body {
-  background-color: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans);
-  -webkit-font-smoothing: antialiased;
-  margin: 0;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
 }
-h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 500; letter-spacing: -0.01em; }
 
-.font-serif { font-family: var(--font-serif); }
-.text-gold { color: var(--gold); }
-.bg-gold { background-color: var(--gold); }
-.text-gold-foreground { color: var(--gold-foreground); }
-.bg-gold-foreground { background-color: var(--gold-foreground); }
-.border-gold { border-color: var(--gold); }
-.text-muted-foreground { color: var(--muted-foreground); }
-.bg-card { background-color: var(--card); }
-.bg-input { background-color: var(--input); }
-.border-border { border-color: var(--border); }
-.text-destructive { color: var(--destructive); }
-.bg-background { background-color: var(--background); }
-.shadow-elegant { box-shadow: var(--shadow-elegant); }
-.hover\:shadow-glow:hover { box-shadow: var(--shadow-glow); }
+/* ─── Utilities ──────────────────────────────────────────────────────────── */
 
-.container-prose {
+@utility container-prose {
   max-width: 1200px;
   margin-inline: auto;
   padding-inline: 1.5rem;
 }
 
-.divider-gold {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  color: var(--gold);
-  font-size: 0.75rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-}
-.divider-gold::before, .divider-gold::after {
-  content: "";
-  width: 2.5rem;
-  height: 1px;
-  background: var(--gold);
-  opacity: 0.6;
+@utility shadow-elegant {
+  box-shadow: var(--shadow-elegant);
 }
 
-/* Form inputs */
-.r-input {
+@utility shadow-glow {
+  box-shadow: var(--shadow-glow);
+}
+
+/*
+ * r-input — text field base style.
+ * Pseudo-states (:focus) are declared in @layer components below
+ * because @utility blocks do not support nested selectors in Tailwind v4.
+ */
+@utility r-input {
   width: 100%;
-  background: var(--input);
-  border: 1px solid var(--border);
-  color: var(--foreground);
+  border: 1px solid var(--color-border);
+  background: var(--color-input);
+  color: var(--color-foreground);
   padding: 0.85rem 1rem;
   font-family: var(--font-sans);
   font-size: 0.95rem;
-  transition: border-color 150ms;
+  transition: border-color 150ms ease;
 }
-.r-input:focus { outline: none; border-color: var(--gold); }
 
-/* Slot buttons */
-.slot {
-  padding: 0.75rem;
-  font-family: ui-monospace, monospace;
-  font-size: 0.875rem;
-  border: 1px solid var(--border);
-  background: transparent;
-  color: var(--foreground);
-  cursor: pointer;
-  transition: all 150ms;
+
+
+@utility admin-input {
+  width: 100%;
+  border: 1px solid #2a2620;
+  background: #1a1813;
+  color: #ece6d6;
+  padding: 0.7rem 0.85rem;
+  font-size: 0.9rem;
 }
-.slot:hover:not(:disabled) { border-color: var(--gold); color: var(--gold); }
-.slot.selected { border-color: var(--gold); background: oklch(0.78 0.12 78 / 0.1); color: var(--gold); }
-.slot:disabled { color: oklch(0.68 0.02 70 / 0.4); border-color: oklch(0.30 0.018 50 / 0.3); text-decoration: line-through; cursor: not-allowed; }
 
+@utility tab-active {
+  border-color: #c9a84c !important;
+  color: #c9a84c !important;
+}
+
+@utility stat-card {
+  background: linear-gradient(
+    135deg,
+    oklch(0.78 0.12 78 / 0.08),
+    oklch(0.78 0.12 78 / 0.02)
+  );
+  border: 1px solid oklch(0.78 0.12 78 / 0.2);
+}
+
+/* ─── Components (pseudo-states & compound selectors) ────────────────────── */
+
+@layer components {
+  /* Decorative gold divider */
+  .divider-gold {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+
+    &::before,
+    &::after {
+      content: "";
+      width: 2.5rem;
+      height: 1px;
+      background: var(--color-gold);
+      opacity: 0.6;
+    }
+  }
+
+  /* r-input interactive states */
+  .r-input:focus {
+    outline: none;
+    border-color: var(--color-gold);
+  }
+
+  /* slot — base + all states */
+  .slot {
+    cursor: pointer;
+    border: 1px solid var(--color-border);
+    background: transparent;
+    color: var(--color-foreground);
+    padding: 0.75rem;
+    font-family: ui-monospace, monospace;
+    font-size: 0.875rem;
+    transition: all 150ms ease;
+
+    &:hover:not(:disabled) {
+      border-color: var(--color-gold);
+      color: var(--color-gold);
+    }
+
+    &.selected {
+      border-color: var(--color-gold);
+      background: oklch(0.70 0.15 68 / 0.85);
+      color: var(--color-gold-foreground);
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      border-color: oklch(0.30 0.018 50 / 0.3);
+      color: oklch(0.68 0.02 70 / 0.4);
+      text-decoration: line-through;
+    }
+  }
+
+  /* admin-input interactive states */
+  .admin-input:focus {
+    outline: none;
+    border-color: #c9a84c;
+  }
+}

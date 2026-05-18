@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<meta name="robots" content="noindex"/>
+		<title>
+			{% block title %}
+				Boca | Connexion administration
+			{% endblock %}
+		</title>
+		<link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}"/>
+		<link rel="apple-touch-icon" href="{{ asset('images/favicon.png') }}"/>
+
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('admin') }}
+		{% endblock %}
+
+		{% block javascripts %}
+			{{ encore_entry_script_tags('admin') }}
+		{% endblock %}
+	</head>
+	<body class="min-h-screen flex items-center justify-center">
+		<div class="w-full max-w-md">
+			<div class="text-center mb-10">
+				<span class="divider-gold mb-4 inline-block">Administration</span>
+				<h1 class="font-serif text-4xl">Boca</h1>
+				<p class="mt-3 text-sm text-muted-foreground">Accès réservé au personnel</p>
+			</div>
+
+			<div class="border border-border bg-card/30 p-8">
+				<div class="flex border-b border-border mb-6">
+					<button type="button" id="tab-login" class="flex-1 py-3 text-xs uppercase tracking-[0.2em] border-b-2 border-gold text-gold">
+						Connexion
+					</button>
+				</div>
+
+				{% if error %}
+					<div class="mb-4 text-sm text-red-500 text-center">
+						{{ error.messageKey|trans(error.messageData, 'security') }}
+					</div>
+				{% endif %}
+
+				{% if app.user %}
+					<div class="mb-4 text-sm text-center">
+						Connecté en tant que
+						{{ app.user.userIdentifier }},
+						<a href="{{ logout_path() }}" class="text-gold hover:underline">Se déconnecter</a>
+					</div>
+				{% endif %}
+
+				<form method="post" class="space-y-5">
+					<label for="username" class="block">
+						<span class="block text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2">
+							Email
+						</span>
+						<input type="email" value="{{ last_username }}" name="_username" id="username" class="admin-input" autocomplete="email" required autofocus>
+					</label>
+
+					<label for="password" class="block">
+						<span class="block text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2">
+							Mot de passe
+						</span>
+						<input type="password" name="_password" id="password" class="admin-input" autocomplete="current-password" required>
+					</label>
+
+					<input type="hidden" name="_csrf_token" data-controller="csrf-protection" value="{{ csrf_token('authenticate') }}">
+
+					<button type="submit" class="cursor-pointer w-full px-5 py-3 text-xs uppercase tracking-[0.2em] bg-gold text-charcoal hover:shadow-glow transition-shadow">
+						Se connecter
+					</button>
+				</form>
+			</div>
+
+			<p class="text-center mt-8">
+				<a href="{{ path('home') }}" class="text-xs uppercase tracking-[0.2em] text-muted-foreground hover:text-gold">
+					← Retour au site
+				</a>
+			</p>
+		</div>
+	</body>
+</html>

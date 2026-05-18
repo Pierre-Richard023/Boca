@@ -33,6 +33,50 @@ class ReservationsRepository extends ServiceEntityRepository
             ->getSingleScalarResult();
     }
 
+    public function findUpcomingReservations(): array
+    {
+        $today = new \DateTime('today');
+        $nowTime = new \DateTime();
+
+        return $this->createQueryBuilder('r')
+            ->andWhere('r.status != :cancelled')
+            ->andWhere('(r.reservation_date > :today OR (r.reservation_date = :today AND r.reservation_time >= :nowTime))')
+            ->setParameter('cancelled', 'cancelled')
+            ->setParameter('today', $today)
+            ->setParameter('nowTime', $nowTime)
+            ->orderBy('r.reservation_date', 'ASC')
+            ->addOrderBy('r.reservation_time', 'ASC')
+            ->getQuery()
+            ->getResult();
+    }
+
+
+    public function findPastOrCancelledReservations(): array
+    {
+        $today = new \DateTime('today');
+        $nowTime = new \DateTime();
+
+        return $this->createQueryBuilder('r')
+            ->andWhere('
+            r.status = :cancelled
+            OR (
+                r.status != :cancelled
+                AND (
+                    r.reservation_date < :today
+                    OR (r.reservation_date = :today AND r.reservation_time < :nowTime)
+                )
+            )
+        ')
+            ->setParameter('cancelled', 'cancelled')
+            ->setParameter('today', $today)
+            ->setParameter('nowTime', $nowTime)
+            ->orderBy('r.reservation_date', 'DESC')
+            ->addOrderBy('r.reservation_time', 'DESC')
+            ->getQuery()
+            ->getResult();
+    }
+
+
 
     //    /**
     //     * @return Reservations[] Returns an array of Reservations objects

@@ -1,0 +1,48 @@
+<div class="flex justify-between items-center mb-6">
+	<h2 class="font-serif text-2xl">Carte des saisons </h2>
+	<button class="px-5 py-2 text-xs uppercase tracking-[0.2em] bg-gold text-gold-foreground hover:opacity-90">
+		+ Ajouter un plat
+	</button>
+</div>
+
+<div class="overflow-x-auto border border-border">
+	<table class="w-full text-sm">
+		<thead class="bg-card/60 text-xs uppercase tracking-wider text-muted-foreground ">
+			<tr>
+				<th class="text-left px-4 py-3">Saison</th>
+				<th class="text-left px-4 py-3">Catégorie</th>
+				<th class="text-left px-4 py-3">Plat</th>
+				<th class="text-right px-4 py-3">Prix</th>
+				<th class="text-center px-4 py-3">État</th>
+				<th class="text-right px-4 py-3">Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for dish in dishes %}
+				<tr class="border-t border-border/50 hover:bg-card/40">
+					<td class="px-4 py-3 text-gold">{{ dish.section.menu.name }}</td>
+					<td class="px-4 py-3 text-xs uppercase tracking-wider text-muted-foreground ">{{ dish.section.title }}</td>
+					<td class="px-4 py-3 font-medium">{{ dish.description }}</td>
+					<td class="px-4 py-3 text-right font-mono">{{ dish.price }}€</td>
+					<td class="px-4 py-3 text-center">
+						<span class="text-xs px-2 py-1 uppercase tracking-wider {{ dish.isAvailable ? 'bg-gold/20 text-gold' : 'bg-muted/30 text-muted-foreground ' }}">
+							{{ dish.isAvailable ? 'En carte' : 'Retiré' }}
+						</span>
+					</td>
+					<td class="px-4 py-3 text-right space-x-2">
+						<label class="relative inline-flex items-center cursor-pointer">
+							<input type="checkbox" class="peer sr-only"/>
+							<div class="w-8 h-[18px] rounded-full bg-gray-300 peer-checked:bg-gold after:absolute after:top-[3px] after:left-[3px] after:w-3 after:h-3 after:rounded-full after:bg-white after:transition-transform peer-checked:after:translate-x-[14px]"></div>
+						</label>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="6" class="px-4 py-10 text-center text-muted-foreground ">
+						Aucun plat pour le moment.
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>

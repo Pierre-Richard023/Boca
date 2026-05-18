@@ -1,0 +1,55 @@
+
+<div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+	<h2 class="font-serif text-2xl">
+		Réservations à venir
+		<span class="text-muted-foreground  text-base">({{ reservationsUpcoming|length }})</span>
+	</h2>
+</div>
+
+<div class="overflow-x-auto border border-border">
+	<table class="w-full text-sm">
+		<thead class="bg-card/60 text-xs uppercase tracking-wider text-muted-foreground ">
+			<tr>
+				<th class="text-left px-4 py-3">Date</th>
+				<th class="text-left px-4 py-3">Heure</th>
+				<th class="text-left px-4 py-3">Client</th>
+				<th class="text-left px-4 py-3">Contact</th>
+				<th class="text-center px-4 py-3">Pers.</th>
+				<th class="text-left px-4 py-3">Notes</th>
+				<th class="text-left px-4 py-3">Statut</th>
+				<th class="text-right px-4 py-3">Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for reservation in reservationsUpcoming %}
+				<tr class="border-t border-border/50 hover:bg-card/40" id="reservation-{{ reservation.id }}" {{ stimulus_controller('cancel-reservation', { url: path('admin.reservations.cancel', { id: reservation.id } ), token: csrf_token('cancel_reservation_' ~ reservation.id) }) }}>
+					<td class="px-4 py-3">{{ reservation.reservationDate|date('D d M') }}</td>
+					<td class="px-4 py-3 font-mono text-gold">{{ reservation.reservationTime|date('H:i') }}</td>
+					<td class="px-4 py-3 font-medium">{{ reservation.customerName }}</td>
+					<td class="px-4 py-3 text-muted-foreground  text-xs">
+						{{ reservation.customerEmail }}<br>
+						{{ reservation.customerPhone }}
+					</td>
+					<td class="px-4 py-3 text-center">{{ reservation.guests }}</td>
+					<td class="px-4 py-3 text-xs italic text-muted-foreground  max-w-[180px]">
+						{{ reservation.message ?: '—' }}
+					</td>
+					<td class="px-4 py-3">
+						<span {{ stimulus_target('cancel-reservation', 'status') }} class="text-xs px-2 py-1 uppercase tracking-wider {{ reservation.status == 'confirmed' ? 'bg-gold/20 text-gold' : 'bg-destructive/20 text-destructive' }}">
+							{{  reservation.status == 'confirmed' ? 'confirmée' : 'annulée' }}
+						</span>
+					</td>
+					<td class="px-4 py-3 text-right space-x-2 whitespace-nowrap">
+						{% include "admin/panels/__cancel-reservations.html.twig" %}
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="8" class="px-4 py-10 text-center text-muted-foreground ">
+						Aucune réservation à venir.
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>

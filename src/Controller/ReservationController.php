@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Reservations;
 use App\Form\ReservationsType;
 use App\Repository\ReservationsRepository;
+use App\Services\ReservationMailerServices;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\FormError;
@@ -17,7 +18,7 @@ final class ReservationController extends AbstractController
     private const MAX_CAPACITY_PER_SLOT = 40;
 
 
-    public function __construct(private readonly EntityManagerInterface $em, private readonly ReservationsRepository $reservationsRepository) {}
+    public function __construct(private readonly EntityManagerInterface $em, private readonly ReservationsRepository $reservationsRepository, private readonly ReservationMailerServices $mailerServices) {}
 
     #[Route('/reservation', name: 'reservation')]
     public function index(Request $request): Response
@@ -38,10 +39,7 @@ final class ReservationController extends AbstractController
             if (!$date || !$timeString) {
                 $this->addFlash('error', 'Date ou créneau manquant.');
             } else {
-                $dt = \DateTime::createFromFormat(
-                    'Y-m-d H:i',
-                    $date->format('Y-m-d') . ' ' . $timeString
-                );
+                $dt = \DateTime::createFromFormat( 'Y-m-d H:i',$date->format('Y-m-d') . ' ' . $timeString);
 
                 if (!$dt) {
                     $form->get('reservation_time')->addError(new FormError('Créneau invalide.'));
@@ -62,12 +60,15 @@ final class ReservationController extends AbstractController
                     } else {
 
                         $reservation->setReservationTime($dt);
-                        $reservation->setStatus('pending');
+                        $reservation->setStatus(Reservations::STATUS_CONFIRMED);
                         $reservation->setCreatedAt(new \DateTimeImmutable());
                         $reservation->setUpdatedAt(new \DateTimeImmutable());
 
                         $this->em->persist($reservation);
                         $this->em->flush();
+
+                        $this->mailerServices->sendReservationConfirmationEmail($reservation);
+
 
                         $this->addFlash('success', 'Votre réservation a bien été enregistrée.');
                         return $this->redirectToRoute('reservation');

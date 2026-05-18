@@ -14,7 +14,6 @@ export default class extends Controller {
     static targets = ['date', 'slots', 'timeInput', 'submitBtn'];
 
     connect() {
-        // date min = aujourd'hui
         const today = new Date().toISOString().split('T')[0];
         if (!this.dateTarget.value) {
             this.dateTarget.value = today;

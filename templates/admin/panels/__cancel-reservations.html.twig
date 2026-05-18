@@ -1,0 +1,24 @@
+{% if reservation.status != 'cancelled' %}
+	<div class="space-y-2">
+		<button type="button" class="cursor-pointer rounded bg-destructive/30 px-3 py-1 text-sm text-white hover:bg-destructive/50" {{ stimulus_action('cancel-reservation', 'toggleForm', 'click') }} {{ stimulus_target('cancel-reservation', 'openButton') }}>
+			Annuler
+		</button>
+		<div class="hidden space-y-2" {{ stimulus_target('cancel-reservation', 'form') }}>
+			<textarea class="w-full rounded border px-3 py-2 text-sm" rows="3" placeholder="Motif d'annulation (optionnel)" {{ stimulus_target('cancel-reservation', 'reason') }}></textarea>
+
+			<div class="flex gap-2">
+				<button type="button" class="rounded bg-destructive/30 px-3 py-1 text-sm text-white hover:bg-destructive/50" {{ stimulus_action('cancel-reservation', 'submit', 'click') }} {{ stimulus_target('cancel-reservation', 'submitButton') }}>
+					Confirmer
+				</button>
+
+				<button type="button" class="rounded bg-gray-300 px-3 py-1 text-sm text-black hover:bg-gray-400" {{ stimulus_action('cancel-reservation', 'hideForm', 'click') }}>
+					Fermer
+				</button>
+			</div>
+		</div>
+	</div>
+{% else %}
+	<span class="text-xs px-2 py-1 uppercase tracking-wider bg-destructive/20 text-destructive">
+		Annulée
+	</span>
+{% endif %}

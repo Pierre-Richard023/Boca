@@ -46,6 +46,12 @@ class Reservations
     private ?\DateTimeImmutable $updated_at = null;
 
 
+
+    public const STATUS_PENDING = 'pending';
+    public const STATUS_CONFIRMED = 'confirmed';
+    public const STATUS_CANCELLED = 'cancelled';
+
+
     public function getId(): ?int
     {
         return $this->id;
@@ -170,5 +176,4 @@ class Reservations
 
         return $this;
     }
-
 }

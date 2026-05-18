@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>Annulation de votre réservation — Boca</title>
+	</head>
+	<body style="margin:0;padding:0;background:#f5f3ee;font-family:Georgia,'Times New Roman',serif;color:#1a1a1a;">
+		<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f5f3ee;padding:40px 16px;">
+			<tr>
+				<td align="center">
+					<table
+						role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;background:#ffffff;border:1px solid #e8e4dd;">
+
+						<!-- Header -->
+						<tr>
+							<td style="background:#1a1a1a;padding:32px;text-align:center;">
+								<div style="font-family:Georgia,serif;font-size:32px;letter-spacing:6px;color:#c9a84c;">BOCA</div>
+								<div style="font-size:11px;letter-spacing:3px;color:#c9a84c;text-transform:uppercase;margin-top:6px;">Restaurant</div>
+							</td>
+						</tr>
+
+						<tr>
+							<td style="height:3px;background:#c9a84c;"></td>
+						</tr>
+
+						<!-- Body -->
+						<tr>
+							<td style="padding:48px 40px 16px;text-align:center;">
+								<div style="font-size:11px;letter-spacing:4px;color:#a04444;text-transform:uppercase;">Réservation annulée</div>
+								<h1 style="font-family:Georgia,serif;font-weight:normal;font-size:32px;margin:20px 0 0;color:#1a1a1a;">
+									Toutes nos excuses,
+									{{ customer_name }}.
+								</h1>
+								<p style="font-size:15px;color:#55575d;line-height:1.7;margin:22px 0 0;">
+									Nous sommes contraints d'annuler votre réservation prévue&nbsp;:
+								</p>
+							</td>
+						</tr>
+
+						<!-- Details box -->
+						<tr>
+							<td style="padding:28px 40px;">
+								<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #e8e4dd;background:#faf8f5;">
+									<tr>
+										<td style="padding:18px 24px;border-bottom:1px solid #e8e4dd;font-size:12px;letter-spacing:2px;color:#999;text-transform:uppercase;width:40%;">Date</td>
+										<td style="padding:18px 24px;border-bottom:1px solid #e8e4dd;font-size:15px;color:#1a1a1a;text-decoration:line-through;">{{ reservation_date }}</td>
+									</tr>
+									<tr>
+										<td style="padding:18px 24px;border-bottom:1px solid #e8e4dd;font-size:12px;letter-spacing:2px;color:#999;text-transform:uppercase;">Heure</td>
+										<td style="padding:18px 24px;border-bottom:1px solid #e8e4dd;font-size:15px;color:#1a1a1a;text-decoration:line-through;">{{ reservation_time }}</td>
+									</tr>
+									<tr>
+										<td style="padding:18px 24px;font-size:12px;letter-spacing:2px;color:#999;text-transform:uppercase;">Convives</td>
+										<td style="padding:18px 24px;font-size:15px;color:#1a1a1a;text-decoration:line-through;">{{ party_size }}
+											personne(s)</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+
+						<!-- Reason -->
+						<tr>
+							<td style="padding:0 40px 24px;">
+								<div style="font-size:11px;letter-spacing:3px;color:#999;text-transform:uppercase;margin-bottom:8px;">Motif</div>
+								<p style="font-size:14px;color:#55575d;line-height:1.7;margin:0;font-style:italic;">
+									{{ cancellation_reason|default('Indisponibilité exceptionnelle du restaurant.') }}
+								</p>
+							</td>
+						</tr>
+
+						<!-- CTA rebook -->
+						<tr>
+							<td style="padding:8px 40px 40px;text-align:center;">
+								<p style="font-size:14px;color:#55575d;line-height:1.7;margin:0 0 24px;">
+									Nous serions honorés de vous accueillir à une autre date.<br>
+									En remerciement de votre compréhension, une coupe de champagne vous sera offerte.
+								</p>
+								<a href="{{ rebook_url }}" style="display:inline-block;background:#c9a84c;color:#1a1a1a;text-decoration:none;
+										                    padding:16px 40px;font-size:12px;letter-spacing:3px;text-transform:uppercase;
+										                    font-family:Arial,sans-serif;font-weight:bold;">
+									Réserver à nouveau
+								</a>
+							</td>
+						</tr>
+
+						<!-- Contact -->
+						<tr>
+							<td style="padding:0 40px 40px;">
+								<p style="font-size:13px;color:#55575d;line-height:1.7;margin:0;text-align:center;">
+									Pour toute question, joignez-nous au
+									<a href="tel:+33000000000" style="color:#c9a84c;text-decoration:none;">+33 0 00 00 00 00</a>
+									ou répondez à cet email.
+								</p>
+							</td>
+						</tr>
+
+						<!-- Address -->
+						<tr>
+							<td style="background:#faf8f5;padding:28px 40px;text-align:center;border-top:1px solid #e8e4dd;">
+								<div style="font-family:Georgia,serif;font-size:18px;color:#1a1a1a;">La Boca</div>
+								<div style="font-size:13px;color:#55575d;margin-top:6px;line-height:1.6;">
+									12 rue des Gourmets · 75001 Paris<br>
+									Du mardi au samedi · 19h — 23h
+								</div>
+							</td>
+						</tr>
+
+						<tr>
+							<td style="background:#1a1a1a;padding:20px;text-align:center;">
+								<div style="font-size:10px;letter-spacing:2px;color:#888;text-transform:uppercase;">
+									©
+									{{ year }}
+									Boca — Tous droits réservés
+								</div>
+							</td>
+						</tr>
+
+					</table>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
