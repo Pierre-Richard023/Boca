@@ -17,7 +17,7 @@ class UsersFixtures extends Fixture
         
         $admin = new Users();
         $admin->setEmail('admin@boca.com')
-            ->setPassword($this->hashe->hashPassword($admin, 'Azerty&-0123'))
+            ->setPassword($this->hashe->hashPassword($admin, '&__Azerty&-0123'))
             ->setRoles(["ROLE_ADMIN"])
         ;
         $manager->persist($admin);
